@@ -1,17 +1,20 @@
 local M = {}
+local util = require("silicis.util")
 
 function M.setup(colors, _)
   local hl = vim.api.nvim_set_hl
+  local menu_bg = util.darken(colors.bg_float, 0.08)
+  local sel_bg = util.blend(colors.blue, colors.bg, 0.12)
 
   -- Completion menu
   hl(0, "Pmenu", {
     fg = colors.fg,
-    bg = colors.bg_float,
+    bg = menu_bg,
   })
 
   hl(0, "PmenuSel", {
     fg = colors.fg,
-    bg = colors.selection,
+    bg = sel_bg,
     bold = true,
   })
 

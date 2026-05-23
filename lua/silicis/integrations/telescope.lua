@@ -1,7 +1,12 @@
 local M = {}
 
+local util = require("silicis.util")
+
 function M.setup(colors, _)
   local hl = vim.api.nvim_set_hl
+  local prompt_bg = util.darken(colors.bg_float, 0.15)
+  local preview_bg = util.darken(colors.bg_dark, 0.1)
+  local selection_bg = util.blend(colors.blue, colors.bg, 0.15)
 
   -- Main windows
   hl(0, "TelescopeNormal", {
@@ -17,12 +22,12 @@ function M.setup(colors, _)
   -- Prompt
   hl(0, "TelescopePromptNormal", {
     fg = colors.fg,
-    bg = colors.bg_alt,
+    bg = prompt_bg,
   })
 
   hl(0, "TelescopePromptBorder", {
-    fg = colors.border,
-    bg = colors.bg_alt,
+    fg = util.lighten(colors.border, 0.1),
+    bg = prompt_bg,
   })
 
   hl(0, "TelescopePromptTitle", {
@@ -51,12 +56,12 @@ function M.setup(colors, _)
   -- Preview
   hl(0, "TelescopePreviewNormal", {
     fg = colors.fg,
-    bg = colors.bg_dark,
+    bg = preview_bg,
   })
 
   hl(0, "TelescopePreviewBorder", {
     fg = colors.border,
-    bg = colors.bg_dark,
+    bg = preview_bg,
   })
 
   hl(0, "TelescopePreviewTitle", {
@@ -67,7 +72,7 @@ function M.setup(colors, _)
 
   -- Selection
   hl(0, "TelescopeSelection", {
-    bg = colors.selection,
+    bg = selection_bg,
     bold = true,
   })
 
@@ -77,7 +82,7 @@ function M.setup(colors, _)
 
   -- Matching text
   hl(0, "TelescopeMatching", {
-    fg = colors.cyan,
+    fg = util.lighten(colors.cyan, 0.15),
     bold = true,
   })
 end
