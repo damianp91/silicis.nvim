@@ -1,13 +1,16 @@
-local themes = {
-  earth = require("silicis.themes.earth")
-}
-
 local M = {}
 
 function M.setup()
   local config = require("silicis.config").options
 
-  local theme = themes[config.variant]
+  local ok, theme = pcall(
+    require,
+    "silicis.themes." .. config.variant
+  )
+
+  if not ok then
+    theme = require("silicis.themes.earth")
+  end
 
   return theme
 end
