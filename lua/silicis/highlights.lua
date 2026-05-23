@@ -7,8 +7,14 @@ function M.setup()
   require("silicis.groups.editor").setup(colors, config)
   require("silicis.groups.syntax").setup(colors, config)
   require("silicis.groups.diagnostics").setup(colors, config)
-  require("lua.silicis.groups.treesitter").setup(colors, config)
-  require("lua.silicis.integrations.cmp").setup(colors, config)
+  require("silicis.groups.treesitter").setup(colors, config)
+  require("silicis.integrations.cmp").setup(colors, config)
+  require("silicis.integrations.telescope").setup(colors, config)
+  require("silicis.integrations.gitsigns").setup(colors, config)
+  require("silicis.groups.semantic_tokens").setup(colors, config)
+  require("silicis.integrations.whichkey").setup(colors, config)
+  require("silicis.integrations.noice").setup(colors, config)
+  require("silicis.integrations.neotree").setup(colors, config)
 end
 
 return M
