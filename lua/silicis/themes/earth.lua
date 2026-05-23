@@ -1,30 +1,14 @@
-return {
-  -- backgrounds
-  bg = "#101317",
-  bg_dark = "#0b0e11",
-  bg_alt = "#161b22",
-  bg_float = "#1b2129",
+local base = require("silicis.themes.base")
 
-  -- foreground
-  fg = "#d7dce2",
-  fg_dark = "#a7b0ba",
+return vim.tbl_deep_extend("force", base, {
+  bg = "#1d2021",
+  bg_alt = "#252525",
 
-  -- comments
-  comment = "#5f6b76",
+  fg = "#d4be98",
 
-  -- warm syntax
   yellow = "#d8a657",
-  orange = "#c77b44",
-  green = "#8b996d",
-  red = "#d16969",
+  green = "#a9b665",
+  blue = "#7daea3",
 
-  -- cool ui
-  blue = "#6ea8fe",
-  cyan = "#5fafb9",
-  purple = "#a58bd6",
-
-  -- interface
-  border = "#2d3642",
-  cursor = "#222933",
-  selection = "#283245",
-}
+  selection = "#2c3230",
+})
