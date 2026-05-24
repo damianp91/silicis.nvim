@@ -6,7 +6,9 @@ end
 
 function M.load()
   -- clear previous highlights
-  vim.cmd("highlight clear")
+  if vim.g.colors_name then
+    vim.cmd("highlight clear")
+  end
 
   if vim.fn.exists("syntax_on") then
     vim.cmd("syntax reset")
@@ -14,6 +16,7 @@ function M.load()
 
   -- registrer colorscheme name
   vim.g.colors_name = "silicis"
+  vim.o.termguicolors = true
 
   -- load highlight
   require("silicis.highlights").setup()

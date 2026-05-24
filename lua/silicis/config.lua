@@ -1,7 +1,15 @@
 local M = {}
 
 M.options = {
-  transparent = false,
+  transparent = {
+    enabled = false,
+
+    floating_windows = false,
+    telescope = false,
+    neo_tree = false,
+    bufferline = false,
+    lualine = false,
+  },
 
   styles = {
     comments = { italic = true },
