@@ -3,7 +3,7 @@ local M = {}
 local util = require("silicis.util")
 
 function M.setup(colors, config)
-  local hl = vim.api.nvim_set_hl
+  local hl = require("util.hl")
 
   local sidebar_bg = util.darken(colors.bg_dark, 0.06)
   local selection_bg = util.blend(colors.blue, colors.bg, 0.14)
@@ -11,113 +11,113 @@ function M.setup(colors, config)
       and config.transparent.neo_tree
 
   -- Main window
-  hl(0, "NeoTreeNormal", {
+  hl("NeoTreeNormal", {
     fg = colors.fg,
     bg = util.get_bg(sidebar_bg, sidebar_transparent),
   })
 
-  hl(0, "NeoTreeNormalNC", {
+  hl("NeoTreeNormalNC", {
     fg = colors.fg_dark,
     bg = util.get_bg(sidebar_bg, sidebar_transparent),
   })
 
-  hl(0, "NeoTreeEndOfBuffer", {
+  hl("NeoTreeEndOfBuffer", {
     fg = sidebar_bg,
     bg = util.get_bg(sidebar_bg, sidebar_transparent),
   })
 
   -- Borders
-  hl(0, "NeoTreeBorder", {
+  hl("NeoTreeBorder", {
     fg = colors.border,
     bg = util.get_bg(sidebar_bg, sidebar_transparent),
   })
 
-  hl(0, "NeoTreeWinSeparator", {
+  hl("NeoTreeWinSeparator", {
     fg = colors.border,
     bg = colors.bg,
   })
 
   -- Cursor line / selection
-  hl(0, "NeoTreeCursorLine", {
+  hl("NeoTreeCursorLine", {
     bg = selection_bg,
   })
 
-  hl(0, "NeoTreeTabActive", {
+  hl("NeoTreeTabActive", {
     fg = colors.fg,
     bg = selection_bg,
     bold = true,
   })
 
   -- Directories
-  hl(0, "NeoTreeDirectoryName", {
+  hl("NeoTreeDirectoryName", {
     fg = colors.yellow,
     bold = true,
   })
 
-  hl(0, "NeoTreeDirectoryIcon", {
+  hl("NeoTreeDirectoryIcon", {
     fg = colors.orange,
   })
 
   -- Files
-  hl(0, "NeoTreeFileName", {
+  hl("NeoTreeFileName", {
     fg = colors.fg,
   })
 
-  hl(0, "NeoTreeFileIcon", {
+  hl("NeoTreeFileIcon", {
     fg = colors.blue,
   })
 
   -- Git status
-  hl(0, "NeoTreeGitAdded", {
+  hl("NeoTreeGitAdded", {
     fg = colors.green,
   })
 
-  hl(0, "NeoTreeGitModified", {
+  hl("NeoTreeGitModified", {
     fg = colors.blue,
   })
 
-  hl(0, "NeoTreeGitDeleted", {
+  hl("NeoTreeGitDeleted", {
     fg = colors.red,
   })
 
-  hl(0, "NeoTreeGitUntracked", {
+  hl("NeoTreeGitUntracked", {
     fg = colors.cyan,
   })
 
-  hl(0, "NeoTreeGitIgnored", {
+  hl("NeoTreeGitIgnored", {
     fg = colors.comment,
     italic = true,
   })
 
   -- Indent markers
-  hl(0, "NeoTreeIndentMarker", {
+  hl("NeoTreeIndentMarker", {
     fg = util.lighten(colors.bg_alt, 0.08),
   })
 
   -- Root name
-  hl(0, "NeoTreeRootName", {
+  hl("NeoTreeRootName", {
     fg = colors.purple,
     bold = true,
   })
 
   -- Float windows
-  hl(0, "NeoTreeFloatBorder", {
+  hl("NeoTreeFloatBorder", {
     fg = colors.border,
     bg = colors.bg_float,
   })
 
-  hl(0, "NeoTreeFloatTitle", {
+  hl("NeoTreeFloatTitle", {
     fg = colors.blue,
     bold = true,
   })
 
   -- Tabs
-  hl(0, "NeoTreeTabSeparatorActive", {
+  hl("NeoTreeTabSeparatorActive", {
     fg = selection_bg,
     bg = util.get_bg(sidebar_bg, sidebar_transparent),
   })
 
-  hl(0, "NeoTreeTabSeparatorInactive", {
+  hl("NeoTreeTabSeparatorInactive", {
     fg = sidebar_bg,
     bg = util.get_bg(sidebar_bg, sidebar_transparent),
   })

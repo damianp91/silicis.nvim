@@ -2,87 +2,87 @@ local M = {}
 local util = require("silicis.util")
 
 function M.setup(colors, _)
-  local hl = vim.api.nvim_set_hl
+  local hl = require("util.hl")
   local menu_bg = util.darken(colors.bg_float, 0.08)
   local sel_bg = util.blend(colors.blue, colors.bg, 0.12)
 
   -- Completion menu
-  hl(0, "Pmenu", {
+  hl("Pmenu", {
     fg = colors.fg,
     bg = menu_bg,
   })
 
-  hl(0, "PmenuSel", {
+  hl("PmenuSel", {
     fg = colors.fg,
     bg = sel_bg,
     bold = true,
   })
 
-  hl(0, "PmenuSbar", {
+  hl("PmenuSbar", {
     bg = colors.bg_alt,
   })
 
-  hl(0, "PmenuThumb", {
+  hl("PmenuThumb", {
     bg = colors.border,
   })
 
   -- nvim-cmp
-  hl(0, "CmpBorder", {
+  hl("CmpBorder", {
     fg = colors.border,
     bg = colors.bg_float,
   })
 
-  hl(0, "CmpDocBorder", {
+  hl("CmpDocBorder", {
     fg = colors.border,
     bg = colors.bg_float,
   })
 
-  hl(0, "CmpPmenu", {
+  hl("CmpPmenu", {
     bg = colors.bg_float,
   })
 
   -- Item kinds
-  hl(0, "CmpItemKindFunction", {
+  hl("CmpItemKindFunction", {
     fg = colors.blue,
   })
 
-  hl(0, "CmpItemKindMethod", {
+  hl("CmpItemKindMethod", {
     fg = colors.cyan,
   })
 
-  hl(0, "CmpItemKindVariable", {
+  hl("CmpItemKindVariable", {
     fg = colors.fg,
   })
 
-  hl(0, "CmpItemKindField", {
+  hl("CmpItemKindField", {
     fg = colors.cyan,
   })
 
-  hl(0, "CmpItemKindProperty", {
+  hl("CmpItemKindProperty", {
     fg = colors.cyan,
   })
 
-  hl(0, "CmpItemKindClass", {
+  hl("CmpItemKindClass", {
     fg = colors.yellow,
   })
 
-  hl(0, "CmpItemKindInterface", {
+  hl("CmpItemKindInterface", {
     fg = colors.yellow,
   })
 
-  hl(0, "CmpItemKindModule", {
+  hl("CmpItemKindModule", {
     fg = colors.orange,
   })
 
-  hl(0, "CmpItemKindKeyword", {
+  hl("CmpItemKindKeyword", {
     fg = colors.purple,
   })
 
-  hl(0, "CmpItemKindSnippet", {
+  hl("CmpItemKindSnippet", {
     fg = colors.green,
   })
 
-  hl(0, "CmpItemKindText", {
+  hl("CmpItemKindText", {
     fg = colors.comment,
   })
 end

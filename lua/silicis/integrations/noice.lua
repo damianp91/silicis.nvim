@@ -3,91 +3,91 @@ local M = {}
 local util = require("silicis.util")
 
 function M.setup(colors, _)
-  local hl = vim.api.nvim_set_hl
+  local hl = require("util.hl")
 
   local popup_bg = util.darken(colors.bg_float, 0.04)
   local cmd_bg = util.darken(colors.bg_alt, 0.06)
 
   -- Main popup
-  hl(0, "NoiceCmdlinePopup", {
+  hl("NoiceCmdlinePopup", {
     fg = colors.fg,
     bg = cmd_bg,
   })
 
-  hl(0, "NoiceCmdlinePopupBorder", {
+  hl("NoiceCmdlinePopupBorder", {
     fg = colors.border,
     bg = cmd_bg,
   })
 
-  hl(0, "NoiceCmdlineIcon", {
+  hl("NoiceCmdlineIcon", {
     fg = colors.blue,
     bg = cmd_bg,
   })
 
   -- Popup menu
-  hl(0, "NoicePopup", {
+  hl("NoicePopup", {
     fg = colors.fg,
     bg = popup_bg,
   })
 
-  hl(0, "NoicePopupBorder", {
+  hl("NoicePopupBorder", {
     fg = colors.border,
     bg = popup_bg,
   })
 
   -- Confirm dialogs
-  hl(0, "NoiceConfirm", {
+  hl("NoiceConfirm", {
     fg = colors.fg,
     bg = popup_bg,
   })
 
-  hl(0, "NoiceConfirmBorder", {
+  hl("NoiceConfirmBorder", {
     fg = colors.yellow,
     bg = popup_bg,
   })
 
   -- Mini notifications
-  hl(0, "NoiceMini", {
+  hl("NoiceMini", {
     fg = colors.fg,
     bg = util.darken(colors.bg_dark, 0.08),
   })
 
   -- Search
-  hl(0, "NoiceFormatProgressDone", {
+  hl("NoiceFormatProgressDone", {
     fg = colors.green,
   })
 
-  hl(0, "NoiceFormatProgressTodo", {
+  hl("NoiceFormatProgressTodo", {
     fg = colors.comment,
   })
 
   -- Command line
-  hl(0, "NoiceCmdline", {
+  hl("NoiceCmdline", {
     fg = colors.fg,
     bg = cmd_bg,
   })
 
-  hl(0, "NoiceCmdlinePrompt", {
+  hl("NoiceCmdlinePrompt", {
     fg = colors.cyan,
     bold = true,
   })
 
   -- Completion menu
-  hl(0, "NoiceCompletionItemKindDefault", {
+  hl("NoiceCompletionItemKindDefault", {
     fg = colors.blue,
   })
 
   -- Messages
-  hl(0, "NoiceFormatTitle", {
+  hl("NoiceFormatTitle", {
     fg = colors.yellow,
     bold = true,
   })
 
-  hl(0, "NoiceFormatEvent", {
+  hl("NoiceFormatEvent", {
     fg = colors.blue,
   })
 
-  hl(0, "NoiceFormatKind", {
+  hl("NoiceFormatKind", {
     fg = colors.purple,
   })
 end
