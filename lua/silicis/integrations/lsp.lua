@@ -2,20 +2,24 @@ local M = {}
 
 local util = require("silicis.util")
 
-function M.setup(colors, _)
+function M.setup(colors, config)
   local hl = vim.api.nvim_set_hl
 
   local float_bg = util.darken(colors.bg_float, 0.05)
 
+  local float_transparent =
+      config.transparent.enabled
+      and config.transparent.floating_windows
+
   -- Floating windows
   hl(0, "NormalFloat", {
     fg = colors.fg,
-    bg = float_bg,
+    bg = util.get_bg(float_bg, float_transparent),
   })
 
   hl(0, "FloatBorder", {
     fg = colors.border,
-    bg = float_bg,
+    bg = util.get_bg(float_bg, float_transparent),
   })
 
   hl(0, "FloatTitle", {

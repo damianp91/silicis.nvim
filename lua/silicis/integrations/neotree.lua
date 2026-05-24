@@ -2,32 +2,34 @@ local M = {}
 
 local util = require("silicis.util")
 
-function M.setup(colors, _)
+function M.setup(colors, config)
   local hl = vim.api.nvim_set_hl
 
   local sidebar_bg = util.darken(colors.bg_dark, 0.06)
   local selection_bg = util.blend(colors.blue, colors.bg, 0.14)
+  local sidebar_transparent = config.transparent.enabled
+      and config.transparent.neo_tree
 
   -- Main window
   hl(0, "NeoTreeNormal", {
     fg = colors.fg,
-    bg = sidebar_bg,
+    bg = util.get_bg(sidebar_bg, sidebar_transparent),
   })
 
   hl(0, "NeoTreeNormalNC", {
     fg = colors.fg_dark,
-    bg = sidebar_bg,
+    bg = util.get_bg(sidebar_bg, sidebar_transparent),
   })
 
   hl(0, "NeoTreeEndOfBuffer", {
     fg = sidebar_bg,
-    bg = sidebar_bg,
+    bg = util.get_bg(sidebar_bg, sidebar_transparent),
   })
 
   -- Borders
   hl(0, "NeoTreeBorder", {
     fg = colors.border,
-    bg = sidebar_bg,
+    bg = util.get_bg(sidebar_bg, sidebar_transparent),
   })
 
   hl(0, "NeoTreeWinSeparator", {
@@ -112,12 +114,12 @@ function M.setup(colors, _)
   -- Tabs
   hl(0, "NeoTreeTabSeparatorActive", {
     fg = selection_bg,
-    bg = selection_bg,
+    bg = util.get_bg(sidebar_bg, sidebar_transparent),
   })
 
   hl(0, "NeoTreeTabSeparatorInactive", {
     fg = sidebar_bg,
-    bg = sidebar_bg,
+    bg = util.get_bg(sidebar_bg, sidebar_transparent),
   })
 end
 

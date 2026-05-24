@@ -2,21 +2,23 @@ local M = {}
 
 local util = require("silicis.util")
 
-function M.setup(colors, _)
+function M.setup(colors, config)
   local hl = vim.api.nvim_set_hl
   local prompt_bg = util.darken(colors.bg_float, 0.15)
   local preview_bg = util.darken(colors.bg_dark, 0.1)
   local selection_bg = util.blend(colors.blue, colors.bg, 0.15)
+  local telescope_transparent = config.transparent.enabled
+      and config.transparent.telescope
 
   -- Main windows
   hl(0, "TelescopeNormal", {
     fg = colors.fg,
-    bg = colors.bg_float,
+    bg = util.get_bg(colors.bg_float, telescope_transparent),
   })
 
   hl(0, "TelescopeBorder", {
     fg = colors.border,
-    bg = colors.bg_float,
+    bg = util.get_bg(colors.bg_float, telescope_transparent),
   })
 
   -- Prompt
