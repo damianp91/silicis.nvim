@@ -1,0 +1,3 @@
+doc/tags
+*.rockspec
+.DS_Store
