@@ -1,8 +1,7 @@
-local utils = require "silicis.util"
 local M = {}
 
 function M.setup(colors, _)
-  local hl = utils
+  local hl = require("util.hl")
 
   hl("DiagnosticError", {
     fg = colors.red,

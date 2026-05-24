@@ -1,106 +1,106 @@
 local M = {}
 
 function M.setup(colors, config)
-  local hl = vim.api.nvim_set_hl
+  local hl = require("util.hl")
 
   -- Keywords
-  hl(0, "@keyword", {
+  hl("@keyword", {
     fg = colors.purple,
     bold = config.styles.keywords.bold,
   })
 
-  hl(0, "@keyword.function", {
+  hl("@keyword.function", {
     fg = colors.purple,
     bold = true,
   })
 
-  hl(0, "@conditional", {
+  hl("@conditional", {
     fg = colors.purple,
   })
 
-  hl(0, "@repeat", {
+  hl("@repeat", {
     fg = colors.purple,
   })
 
   -- Functions
-  hl(0, "@function", {
+  hl("@function", {
     fg = colors.blue,
   })
 
-  hl(0, "@function.call", {
+  hl("@function.call", {
     fg = colors.blue,
   })
 
-  hl(0, "@method", {
+  hl("@method", {
     fg = colors.cyan,
   })
 
-  hl(0, "@method.call", {
+  hl("@method.call", {
     fg = colors.cyan,
   })
 
   -- Variables
-  hl(0, "@variable", {
+  hl("@variable", {
     fg = colors.fg,
   })
 
-  hl(0, "@parameter", {
+  hl("@parameter", {
     fg = colors.fg_dark,
     italic = true,
   })
 
-  hl(0, "@field", {
+  hl("@field", {
     fg = colors.cyan,
   })
 
-  hl(0, "@property", {
+  hl("@property", {
     fg = colors.cyan,
   })
 
   -- Types
-  hl(0, "@type", {
+  hl("@type", {
     fg = colors.yellow,
   })
 
-  hl(0, "@type.builtin", {
+  hl("@type.builtin", {
     fg = colors.orange,
   })
 
   -- Strings
-  hl(0, "@string", {
+  hl("@string", {
     fg = colors.green,
   })
 
-  hl(0, "@string.escape", {
+  hl("@string.escape", {
     fg = colors.orange,
   })
 
   -- Constants
-  hl(0, "@constant", {
+  hl("@constant", {
     fg = colors.orange,
   })
 
-  hl(0, "@constant.builtin", {
+  hl("@constant.builtin", {
     fg = colors.red,
   })
 
   -- Comments
-  hl(0, "@comment", {
+  hl("@comment", {
     fg = colors.comment,
     italic = config.styles.comments.italic,
   })
 
   -- Operators
-  hl(0, "@operator", {
+  hl("@operator", {
     fg = colors.fg,
   })
 
   -- Punctuation
-  hl(0, "@punctuation.delimiter", {
+  hl("@punctuation.delimiter", {
     fg = colors.fg_dark,
   })
 
-  hl(0, "@punctuation.bracket", {
+  hl("@punctuation.bracket", {
     fg = colors.fg_dark,
   })
 end

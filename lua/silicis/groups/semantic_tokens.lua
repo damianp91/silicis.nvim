@@ -1,67 +1,67 @@
 local M = {}
 
 function M.setup(colors, _)
-  local hl = vim.api.nvim_set_hl
+  local hl = require("util.hl")
 
   -- Functions
-  hl(0, "@lsp.type.function", {
+  hl("@lsp.type.function", {
     link = "@function",
   })
 
-  hl(0, "@lsp.type.method", {
+  hl("@lsp.type.method", {
     link = "@method",
   })
 
   -- Variables
-  hl(0, "@lsp.type.variable", {
+  hl("@lsp.type.variable", {
     link = "@variable",
   })
 
-  hl(0, "@lsp.type.parameter", {
+  hl("@lsp.type.parameter", {
     link = "@parameter",
   })
 
-  hl(0, "@lsp.type.property", {
+  hl("@lsp.type.property", {
     link = "@property",
   })
 
   -- Types
-  hl(0, "@lsp.type.class", {
+  hl("@lsp.type.class", {
     link = "@type",
   })
 
-  hl(0, "@lsp.type.interface", {
+  hl("@lsp.type.interface", {
     link = "@type",
   })
 
-  hl(0, "@lsp.type.namespace", {
+  hl("@lsp.type.namespace", {
     fg = colors.yellow,
   })
 
-  hl(0, "@lsp.type.enum", {
+  hl("@lsp.type.enum", {
     fg = colors.orange,
   })
 
-  hl(0, "@lsp.type.enumMember", {
+  hl("@lsp.type.enumMember", {
     fg = colors.cyan,
   })
 
   -- Keywords
-  hl(0, "@lsp.type.keyword", {
+  hl("@lsp.type.keyword", {
     link = "@keyword",
   })
 
   -- Comments
-  hl(0, "@lsp.type.comment", {
+  hl("@lsp.type.comment", {
     link = "@comment",
   })
 
   -- Modifiers
-  hl(0, "@lsp.mod.readonly", {
+  hl("@lsp.mod.readonly", {
     italic = true,
   })
 
-  hl(0, "@lsp.mod.deprecated", {
+  hl("@lsp.mod.deprecated", {
     strikethrough = true,
     fg = colors.comment,
   })

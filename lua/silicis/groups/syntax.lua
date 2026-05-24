@@ -1,39 +1,39 @@
 local M = {}
 
 function M.setup(colors, config)
-  local hl = vim.api.nvim_set_hl
+  local hl = require("util.hl")
 
-  hl(0, "Comment", {
+  hl("Comment", {
     fg = colors.comment,
     italic = config.styles.comments.italic,
   })
 
-  hl(0, "Keyword", {
+  hl("Keyword", {
     fg = colors.purple,
     bold = config.styles.keywords.bold,
   })
 
-  hl(0, "Function", {
+  hl("Function", {
     fg = colors.blue,
   })
 
-  hl(0, "String", {
+  hl("String", {
     fg = colors.green,
   })
 
-  hl(0, "Type", {
+  hl("Type", {
     fg = colors.yellow,
   })
 
-  hl(0, "Constant", {
+  hl("Constant", {
     fg = colors.orange,
   })
 
-  hl(0, "Identifier", {
+  hl("Identifier", {
     fg = colors.cyan,
   })
 
-  hl(0, "Error", {
+  hl("Error", {
     fg = colors.red,
     bold = true,
   })
