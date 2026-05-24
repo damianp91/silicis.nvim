@@ -1,7 +1,8 @@
 local M = {}
+local util = require('silicis.util')
+local hl = util.hl
 
 function M.setup(colors, config)
-  local hl = require("util.hl")
 
   hl("Comment", {
     fg = colors.comment,

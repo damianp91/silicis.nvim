@@ -1,9 +1,8 @@
 local M = {}
-
-local util = require("silicis.util")
+local util = require('silicis.util')
+local hl = util.hl
 
 function M.setup(colors, config)
-  local hl = require("util.hl")
   local transparent = config.transparent.enabled
 
   hl("Normal", {

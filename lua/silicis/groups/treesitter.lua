@@ -1,107 +1,246 @@
 local M = {}
 
-function M.setup(colors, config)
-  local hl = require("util.hl")
+local util = require('silicis.util')
+local hl = util.hl
 
+function M.setup(colors, config)
   -- Keywords
-  hl("@keyword", {
+  hl('@keyword', {
     fg = colors.purple,
     bold = config.styles.keywords.bold,
   })
 
-  hl("@keyword.function", {
-    fg = colors.purple,
-    bold = true,
+  hl('@keyword.function', {
+    link = '@keyword',
   })
 
-  hl("@conditional", {
-    fg = colors.purple,
+  hl('@conditional', {
+    link = '@keyword',
   })
 
-  hl("@repeat", {
-    fg = colors.purple,
+  hl('@repeat', {
+    link = '@keyword',
   })
 
-  -- Functions
-  hl("@function", {
+  hl('@exception', {
+    fg = colors.red,
+  })
+
+  -- Functions / Methods
+  hl('@function', {
     fg = colors.blue,
   })
 
-  hl("@function.call", {
-    fg = colors.blue,
+  hl('@function.call', {
+    link = '@function',
   })
 
-  hl("@method", {
+  hl('@function.builtin', {
     fg = colors.cyan,
   })
 
-  hl("@method.call", {
+  hl('@method', {
     fg = colors.cyan,
+  })
+
+  hl('@method.call', {
+    link = '@method',
+  })
+
+  hl('@constructor', {
+    fg = colors.yellow,
   })
 
   -- Variables
-  hl("@variable", {
+  hl('@variable', {
     fg = colors.fg,
   })
 
-  hl("@parameter", {
+  hl('@variable.builtin', {
+    fg = colors.red,
+    italic = true,
+  })
+
+  hl('@parameter', {
     fg = colors.fg_dark,
     italic = true,
   })
 
-  hl("@field", {
+  hl('@field', {
     fg = colors.cyan,
   })
 
-  hl("@property", {
-    fg = colors.cyan,
+  hl('@property', {
+    link = '@field',
   })
 
-  -- Types
-  hl("@type", {
+  -- Types / Modules
+  hl('@type', {
     fg = colors.yellow,
   })
 
-  hl("@type.builtin", {
+  hl('@type.builtin', {
+    fg = colors.orange,
+  })
+
+  hl('@attribute', {
+    fg = colors.orange,
+  })
+
+  hl('@namespace', {
+    fg = colors.blue,
+  })
+
+  hl('@module', {
+    link = '@namespace',
+  })
+
+  -- Constants / Numbers / Booleans
+  hl('@constant', {
+    fg = colors.orange,
+  })
+
+  hl('@constant.builtin', {
+    fg = colors.red,
+  })
+
+  hl('@boolean', {
+    fg = colors.orange,
+  })
+
+  hl('@number', {
     fg = colors.orange,
   })
 
   -- Strings
-  hl("@string", {
+  hl('@string', {
     fg = colors.green,
   })
 
-  hl("@string.escape", {
+  hl('@string.escape', {
     fg = colors.orange,
   })
 
-  -- Constants
-  hl("@constant", {
+  hl('@string.regex', {
     fg = colors.orange,
   })
 
-  hl("@constant.builtin", {
-    fg = colors.red,
+  hl('@string.special', {
+    fg = colors.cyan,
+  })
+
+  -- Operators / Punctuation
+  hl('@operator', {
+    fg = colors.fg,
+  })
+
+  hl('@punctuation.delimiter', {
+    fg = colors.fg_dark,
+  })
+
+  hl('@punctuation.bracket', {
+    fg = colors.fg_dark,
   })
 
   -- Comments
-  hl("@comment", {
+  hl('@comment', {
     fg = colors.comment,
     italic = config.styles.comments.italic,
   })
 
-  -- Operators
-  hl("@operator", {
-    fg = colors.fg,
+  hl('@comment.todo', {
+    fg = colors.yellow,
+    bold = true,
   })
 
-  -- Punctuation
-  hl("@punctuation.delimiter", {
+  hl('@comment.warning', {
+    fg = colors.orange,
+    bold = true,
+  })
+
+  hl('@comment.error', {
+    fg = colors.red,
+    bold = true,
+  })
+
+  hl('@comment.note', {
+    fg = colors.blue,
+    bold = true,
+  })
+
+  -- HTML / XML / JSX
+  hl('@tag', {
+    fg = colors.red,
+  })
+
+  hl('@tag.attribute', {
+    fg = colors.yellow,
+  })
+
+  hl('@tag.delimiter', {
     fg = colors.fg_dark,
   })
 
-  hl("@punctuation.bracket", {
-    fg = colors.fg_dark,
+  -- Diff
+  hl('@diff.plus', {
+    fg = colors.green,
+  })
+
+  hl('@diff.minus', {
+    fg = colors.red,
+  })
+
+  hl('@diff.delta', {
+    fg = colors.blue,
+  })
+
+  -- Markup / Markdown
+  hl('@markup.heading', {
+    fg = colors.yellow,
+    bold = true,
+  })
+
+  hl('@markup.strong', {
+    bold = true,
+  })
+
+  hl('@markup.italic', {
+    italic = true,
+  })
+
+  hl('@markup.link', {
+    fg = colors.blue,
+    underline = true,
+  })
+
+  hl('@markup.link.url', {
+    fg = colors.cyan,
+    underline = true,
+  })
+
+  hl('@markup.raw', {
+    fg = colors.green,
+  })
+
+  hl('@markup.quote', {
+    fg = colors.comment,
+    italic = true,
+  })
+
+  hl('@markup.math', {
+    fg = colors.yellow,
+  })
+
+  hl('@markup.list', {
+    fg = colors.orange,
+  })
+
+  hl('@markup.list.checked', {
+    fg = colors.green,
+  })
+
+  hl('@markup.list.unchecked', {
+    fg = colors.comment,
   })
 end
 
