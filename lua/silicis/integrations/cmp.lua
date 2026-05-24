@@ -1,8 +1,8 @@
 local M = {}
-local util = require("silicis.util")
+local util = require('silicis.util')
+local hl = util.hl
 
 function M.setup(colors, _)
-  local hl = require("util.hl")
   local menu_bg = util.darken(colors.bg_float, 0.08)
   local sel_bg = util.blend(colors.blue, colors.bg, 0.12)
 

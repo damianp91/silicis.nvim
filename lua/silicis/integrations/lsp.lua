@@ -1,9 +1,8 @@
 local M = {}
-
-local util = require("silicis.util")
+local util = require('silicis.util')
+local hl = util.hl
 
 function M.setup(colors, config)
-  local hl = require("util.hl")
 
   local float_bg = util.darken(colors.bg_float, 0.05)
 
@@ -24,7 +23,7 @@ function M.setup(colors, config)
 
   hl("FloatTitle", {
     fg = colors.blue,
-    bg = float_bg,
+    bg = util.get_bg(float_bg, float_transparent),
     bold = true,
   })
 

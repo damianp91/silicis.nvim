@@ -1,9 +1,8 @@
 local M = {}
-
-local util = require("silicis.util")
+local util = require('silicis.util')
+local hl = util.hl
 
 function M.setup(colors, _)
-  local hl = require("util.hl")
 
   local popup_bg = util.darken(colors.bg_float, 0.05)
   local title_bg = util.blend(colors.blue, colors.bg, 0.18)

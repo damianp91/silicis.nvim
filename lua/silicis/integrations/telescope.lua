@@ -1,11 +1,10 @@
 local M = {}
-
-local util = require("silicis.util")
+local util = require('silicis.util')
+local hl = util.hl
 
 function M.setup(colors, config)
-  local hl = require("util.hl")
   local prompt_bg = util.darken(colors.bg_float, 0.15)
-  local preview_bg = util.darken(colors.bg_dark, 0.1)
+  -- local preview_bg = util.darken(colors.bg_dark, 0.1)
   local selection_bg = util.blend(colors.blue, colors.bg, 0.15)
   local telescope_transparent = config.transparent.enabled
       and config.transparent.telescope
@@ -34,41 +33,41 @@ function M.setup(colors, config)
 
   hl("TelescopePromptTitle", {
     fg = colors.bg_dark,
-    bg = colors.blue,
+    bg = util.get_bg(colors.bg_float, telescope_transparent),
     bold = true,
   })
 
   -- Results
   hl("TelescopeResultsNormal", {
     fg = colors.fg,
-    bg = colors.bg_float,
+    bg = util.get_bg(colors.bg_float, telescope_transparent),
   })
 
   hl("TelescopeResultsBorder", {
     fg = colors.border,
-    bg = colors.bg_float,
+    bg = util.get_bg(colors.bg_float, telescope_transparent),
   })
 
   hl("TelescopeResultsTitle", {
     fg = colors.bg_dark,
-    bg = colors.green,
+    bg = util.get_bg(colors.bg_float, telescope_transparent),
     bold = true,
   })
 
   -- Preview
   hl("TelescopePreviewNormal", {
     fg = colors.fg,
-    bg = preview_bg,
+    bg = util.get_bg(colors.bg_float, telescope_transparent),
   })
 
   hl("TelescopePreviewBorder", {
     fg = colors.border,
-    bg = preview_bg,
+    bg = util.get_bg(colors.bg_float, telescope_transparent),
   })
 
   hl("TelescopePreviewTitle", {
     fg = colors.bg_dark,
-    bg = colors.purple,
+    bg = util.get_bg(colors.bg_float, telescope_transparent),
     bold = true,
   })
 

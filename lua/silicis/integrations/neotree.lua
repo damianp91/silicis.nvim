@@ -1,9 +1,8 @@
 local M = {}
-
-local util = require("silicis.util")
+local util = require('silicis.util')
+local hl = util.hl
 
 function M.setup(colors, config)
-  local hl = require("util.hl")
 
   local sidebar_bg = util.darken(colors.bg_dark, 0.06)
   local selection_bg = util.blend(colors.blue, colors.bg, 0.14)
@@ -34,7 +33,7 @@ function M.setup(colors, config)
 
   hl("NeoTreeWinSeparator", {
     fg = colors.border,
-    bg = colors.bg,
+    bg = util.get_bg(colors.bg, sidebar_transparent),
   })
 
   -- Cursor line / selection
