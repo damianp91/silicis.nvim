@@ -1,16 +1,24 @@
 local M = {}
 
+local util = require("silicis.util")
+
 function M.setup(colors, config)
   local hl = vim.api.nvim_set_hl
+  local transparent = config.transparent.enabled
 
   hl(0, "Normal", {
     fg = colors.fg,
-    bg = config.transparent and "NONE" or colors.bg,
+    bg = util.get_bg(colors.bg, transparent),
   })
 
   hl(0, "NormalFloat", {
     fg = colors.fg,
     bg = colors.bg_float,
+  })
+
+  hl(0, "NormalNC", {
+    fg = colors.fg_dark,
+    bg = util.get_bg(colors.bg_dark, transparent),
   })
 
   hl(0, "FloatBorder", {
@@ -43,6 +51,10 @@ function M.setup(colors, config)
   hl(0, "StatusLineNC", {
     fg = colors.comment,
     bg = colors.bg_dark,
+  })
+
+  hl(0, "SignColumn", {
+    bg = util.get_bg(colors.bg, transparent),
   })
 end
 

@@ -1,21 +1,22 @@
+local utils = require "silicis.util"
 local M = {}
 
 function M.setup(colors, _)
-  local hl = vim.api.nvim_set_hl
+  local hl = utils
 
-  hl(0, "DiagnosticError", {
+  hl("DiagnosticError", {
     fg = colors.red,
   })
 
-  hl(0, "DiagnosticWarn", {
+  hl("DiagnosticWarn", {
     fg = colors.yellow,
   })
 
-  hl(0, "DiagnosticInfo", {
+  hl("DiagnosticInfo", {
     fg = colors.blue,
   })
 
-  hl(0, "DiagnosticHint", {
+  hl("DiagnosticHint", {
     fg = colors.cyan,
   })
 end
