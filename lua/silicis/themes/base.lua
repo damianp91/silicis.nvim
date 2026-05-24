@@ -13,7 +13,7 @@ local M = {
   comment = "#6f7470",
 
   -- Borders
-  border = "#3a4042",
+  border = "#323839",
 
   -- Core colors
   red = "#e67e80",
@@ -26,6 +26,7 @@ local M = {
 
   -- UI
   selection = "#2d353b",
+  selection_soft = "#252c2e",
 }
 
 return M
