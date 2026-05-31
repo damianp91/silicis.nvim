@@ -3,8 +3,8 @@ local M = {}
 local util = require("silicis.util")
 
 function M.setup(colors)
-  local bg_inactive = util.darken(colors.bg_dark, 0.04)
-  local bg_active = util.blend(colors.blue, colors.bg, 0.10)
+  local bg_inactive = util.darken(colors.bg_secondary, 0.04)
+  local bg_active = util.blend(colors.orange_dark, colors.bg, 0.10)
 
   return {
     fill = {
@@ -17,8 +17,9 @@ function M.setup(colors)
     },
 
     buffer_visible = {
-      fg = colors.fg_dark,
+      fg = colors.yellow,
       bg = bg_inactive,
+      bold = true
     },
 
     buffer_selected = {
@@ -30,7 +31,7 @@ function M.setup(colors)
 
     -- Separators
     separator = {
-      fg = colors.bg_dark,
+      fg = colors.bg,
       bg = colors.bg_dark,
     },
 
@@ -93,12 +94,12 @@ function M.setup(colors)
 
     -- Hint/info/warn/error
     hint = {
-      fg = colors.cyan,
+      fg = colors.blue,
       bg = bg_inactive,
     },
 
     info = {
-      fg = colors.blue,
+      fg = colors.aqua,
       bg = bg_inactive,
     },
 
@@ -138,7 +139,7 @@ function M.setup(colors)
 
     -- Indicator
     indicator_selected = {
-      fg = colors.blue,
+      fg = colors.orange,
       bg = bg_active,
     },
   }

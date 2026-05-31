@@ -5,7 +5,7 @@ local hl = util.hl
 function M.setup(colors, _)
 
   local add_bg = util.blend(colors.green, colors.bg, 0.10)
-  local change_bg = util.blend(colors.blue, colors.bg, 0.10)
+  local change_bg = util.blend(colors.orange, colors.bg, 0.10)
   local delete_bg = util.blend(colors.red, colors.bg, 0.10)
 
   -- GitSigns
@@ -14,11 +14,11 @@ function M.setup(colors, _)
   })
 
   hl("GitSignsChange", {
-    fg = colors.blue,
+    fg = colors.orange_dark,
   })
 
   hl("GitSignsDelete", {
-    fg = colors.red,
+    fg = colors.red_dark,
   })
 
   -- Diff highlights
@@ -35,7 +35,7 @@ function M.setup(colors, _)
   })
 
   hl("DiffText", {
-    bg = util.blend(colors.blue, colors.bg, 0.18),
+    bg = util.blend(colors.yellow_dark, colors.bg, 0.18),
   })
 
   -- Git diff text
@@ -44,11 +44,11 @@ function M.setup(colors, _)
   })
 
   hl("diffRemoved", {
-    fg = colors.red,
+    fg = colors.red_dark,
   })
 
   hl("diffChanged", {
-    fg = colors.blue,
+    fg = colors.orange_dark,
   })
 end
 

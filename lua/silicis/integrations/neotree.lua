@@ -4,20 +4,20 @@ local hl = util.hl
 
 function M.setup(colors, config)
 
-  local sidebar_bg = util.darken(colors.bg_dark, 0.06)
-  local selection_bg = util.blend(colors.blue, colors.bg, 0.14)
+  local sidebar_bg = util.darken(colors.bg_secondary, 0.06)
+  local selection_bg = util.blend(colors.selection, colors.bg, 0.14)
   local sidebar_transparent = config.transparent.enabled
       and config.transparent.neo_tree
 
   -- Main window
   hl("NeoTreeNormal", {
     fg = colors.fg,
-    bg = util.get_bg(sidebar_bg, sidebar_transparent),
+    bg = util.get_bg(colors.bg, sidebar_transparent),
   })
 
   hl("NeoTreeNormalNC", {
     fg = colors.fg_dark,
-    bg = util.get_bg(sidebar_bg, sidebar_transparent),
+    bg = util.get_bg(colors.bg_secondary, sidebar_transparent),
   })
 
   hl("NeoTreeEndOfBuffer", {
@@ -90,7 +90,7 @@ function M.setup(colors, config)
 
   -- Indent markers
   hl("NeoTreeIndentMarker", {
-    fg = util.lighten(colors.bg_alt, 0.08),
+    fg = util.lighten(colors.bg_secondary, 0.08),
   })
 
   -- Root name

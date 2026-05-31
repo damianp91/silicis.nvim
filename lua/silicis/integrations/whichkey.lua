@@ -2,36 +2,35 @@ local M = {}
 local util = require('silicis.util')
 local hl = util.hl
 
-function M.setup(colors, _)
-
-  local popup_bg = util.darken(colors.bg_float, 0.05)
-  local title_bg = util.blend(colors.blue, colors.bg, 0.18)
+function M.setup(colors, config)
+  local whichkey_transparent = config.transparent.enabled
+    and config.transparent.whichkey
 
   -- Main popup
   hl("WhichKeyNormal", {
     fg = colors.fg,
-    bg = popup_bg,
+    bg = util.get_bg(colors.bg_float, whichkey_transparent),
   })
 
   hl("WhichKeyBorder", {
     fg = colors.border,
-    bg = popup_bg,
+    bg = util.get_bg(colors.bg_float, whichkey_transparent),
   })
 
   hl("WhichKeyTitle", {
     fg = colors.fg,
-    bg = title_bg,
+    bg = util.get_bg(colors.bg_float, whichkey_transparent),
     bold = true,
   })
 
   -- Keys
   hl("WhichKey", {
-    fg = colors.blue,
+    fg = colors.green,
     bold = true,
   })
 
   hl("WhichKeySeparator", {
-    fg = colors.comment,
+    fg = colors.fg_dark,
   })
 
   hl("WhichKeyGroup", {
@@ -39,16 +38,53 @@ function M.setup(colors, _)
   })
 
   hl("WhichKeyDesc", {
-    fg = colors.fg,
+    fg = colors.fg_dark,
   })
 
   hl("WhichKeyValue", {
-    fg = colors.cyan,
+    fg = colors.blue_light,
   })
 
   -- Floating helpers
   hl("WhichKeyFloat", {
-    bg = popup_bg,
+    bg = colors.bg_float,
+  })
+
+  -- icons
+  hl("WhichKeyIconBlue", {
+    fg = colors.blue,
+  })
+
+  hl("WhichKeyIconGreen", {
+    fg = colors.green,
+  })
+
+  hl("WhichKeyIconYellow", {
+    fg = colors.yellow,
+  })
+
+  hl("WhichKeyIconOrange", {
+    fg = colors.orange,
+  })
+
+  hl("WhichKeyIconRed", {
+    fg = colors.red,
+  })
+
+  hl("WhichKeyIconPurple", {
+    fg = colors.purple,
+  })
+
+  hl("WhichKeyIconCyan", {
+    fg = colors.aqua,
+  })
+
+  hl("WhichKeyIconGrey", {
+    fg = colors.comment,
+  })
+
+  hl("WhichKeyIcon", {
+    fg = colors.blue_light,
   })
 end
 

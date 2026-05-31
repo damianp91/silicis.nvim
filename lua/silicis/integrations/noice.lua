@@ -5,7 +5,7 @@ local hl = util.hl
 function M.setup(colors, _)
 
   local popup_bg = util.darken(colors.bg_float, 0.04)
-  local cmd_bg = util.darken(colors.bg_alt, 0.06)
+  local cmd_bg = util.darken(colors.bg_secondary, 0.06)
 
   -- Main popup
   hl("NoiceCmdlinePopup", {
@@ -48,7 +48,7 @@ function M.setup(colors, _)
   -- Mini notifications
   hl("NoiceMini", {
     fg = colors.fg,
-    bg = util.darken(colors.bg_dark, 0.08),
+    bg = util.darken(colors.bg_secondary, 0.08),
   })
 
   -- Search
