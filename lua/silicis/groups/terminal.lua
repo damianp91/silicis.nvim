@@ -1,6 +1,10 @@
 local M = {}
+local util = require("silicis.util")
 
-function M.setup(colors)
+function M.setup(colors, config)
+  if not config.terminal_colors then
+    return
+  end
   vim.g.terminal_color_0 = colors.bg_dark
   vim.g.terminal_color_1 = colors.red
   vim.g.terminal_color_2 = colors.green
@@ -11,7 +15,7 @@ function M.setup(colors)
   vim.g.terminal_color_7 = colors.fg
 
   vim.g.terminal_color_8 = colors.comment
-  vim.g.terminal_color_9 = colors.red
+  vim.g.terminal_color_9 = util.lighten(colors.red, 018)
   vim.g.terminal_color_10 = colors.green
   vim.g.terminal_color_11 = colors.yellow
   vim.g.terminal_color_12 = colors.blue

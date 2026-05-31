@@ -6,41 +6,43 @@ local hl = util.hl
 function M.setup(colors, config)
   -- Keywords
   hl('@keyword', {
-    fg = colors.purple,
+    fg = colors.red_dark,
     bold = config.styles.keywords.bold,
   })
 
   hl('@keyword.function', {
-    link = '@keyword',
+    fg = colors.red,
+    bold = true,
   })
 
   hl('@conditional', {
-    link = '@keyword',
+    fg = colors.red,
+    bold = true,
   })
 
   hl('@repeat', {
-    link = '@keyword',
+    fg = colors.blue,
   })
 
   hl('@exception', {
-    fg = colors.red,
+    fg = colors.red_dark,
   })
 
   -- Functions / Methods
   hl('@function', {
-    fg = colors.blue,
+    fg = colors.green_neon,
   })
 
   hl('@function.call', {
-    link = '@function',
+    fg = colors.yellow_dark,
   })
 
   hl('@function.builtin', {
-    fg = colors.cyan,
+    fg = colors.orange_dark,
   })
 
   hl('@method', {
-    fg = colors.cyan,
+    fg = colors.green_neon,
   })
 
   hl('@method.call', {
@@ -53,21 +55,29 @@ function M.setup(colors, config)
 
   -- Variables
   hl('@variable', {
-    fg = colors.fg,
+    fg = colors.fg_dark,
   })
 
   hl('@variable.builtin', {
-    fg = colors.red,
+    fg = colors.orange,
     italic = true,
   })
 
+  hl("@variable.member", {
+    fg = colors.blue_light,
+  })
+
+  hl("@variable.parameter", {
+    link = "@parameter",
+  })
+
   hl('@parameter', {
-    fg = colors.fg_dark,
+    fg = colors.blue,
     italic = true,
   })
 
   hl('@field', {
-    fg = colors.cyan,
+    fg = colors.blue_light,
   })
 
   hl('@property', {
@@ -80,15 +90,15 @@ function M.setup(colors, config)
   })
 
   hl('@type.builtin', {
-    fg = colors.orange,
+    fg = colors.yellow,
   })
 
   hl('@attribute', {
-    fg = colors.orange,
+    fg = colors.green,
   })
 
   hl('@namespace', {
-    fg = colors.blue,
+    fg = colors.blue_light,
   })
 
   hl('@module', {
@@ -97,19 +107,24 @@ function M.setup(colors, config)
 
   -- Constants / Numbers / Booleans
   hl('@constant', {
-    fg = colors.orange,
+    fg = colors.purple_dark,
   })
 
   hl('@constant.builtin', {
-    fg = colors.red,
+    fg = colors.orange,
   })
 
   hl('@boolean', {
-    fg = colors.orange,
+    fg = colors.purple,
+    bold = true
   })
 
   hl('@number', {
-    fg = colors.orange,
+    fg = colors.purple,
+  })
+
+  hl('@number.float', {
+    link = '@number'
   })
 
   -- Strings
@@ -118,30 +133,45 @@ function M.setup(colors, config)
   })
 
   hl('@string.escape', {
-    fg = colors.orange,
+    fg = colors.orange_dark,
   })
 
   hl('@string.regex', {
-    fg = colors.orange,
+    fg = colors.green_neon,
   })
 
   hl('@string.special', {
-    fg = colors.cyan,
+    fg = colors.orange,
+  })
+
+  hl('@string.special.url', {
+    fg = colors.blue_dark,
   })
 
   -- Operators / Punctuation
   hl('@operator', {
-    fg = colors.fg,
+    fg = colors.orange,
+  })
+
+  -- special operators
+  hl("@keyword.operator", {
+    fg = colors.orange,
+    italic = true,
   })
 
   hl('@punctuation.delimiter', {
-    fg = colors.fg_dark,
+    fg = colors.orange,
   })
 
   hl('@punctuation.bracket', {
-    fg = colors.fg_dark,
+    fg = colors.orange,
   })
 
+  hl("@punctuation.special", {
+    fg = colors.orange,
+  })
+
+  -- NOTE: desde aca se retoma
   -- Comments
   hl('@comment', {
     fg = colors.comment,
@@ -149,12 +179,12 @@ function M.setup(colors, config)
   })
 
   hl('@comment.todo', {
-    fg = colors.yellow,
+    fg = colors.aqua,
     bold = true,
   })
 
   hl('@comment.warning', {
-    fg = colors.orange,
+    fg = colors.yellow,
     bold = true,
   })
 
@@ -164,13 +194,23 @@ function M.setup(colors, config)
   })
 
   hl('@comment.note', {
-    fg = colors.blue,
+    fg = colors.aqua,
     bold = true,
+  })
+
+  hl('@comment.info', {
+    fg = colors.green_neon,
+    italic = true,
+  })
+
+  hl('@comment.test', {
+    fg = colors.green,
+    italic = true,
   })
 
   -- HTML / XML / JSX
   hl('@tag', {
-    fg = colors.red,
+    fg = colors.orange,
   })
 
   hl('@tag.attribute', {
@@ -187,16 +227,32 @@ function M.setup(colors, config)
   })
 
   hl('@diff.minus', {
-    fg = colors.red,
+    fg = colors.red_dark,
   })
 
   hl('@diff.delta', {
-    fg = colors.blue,
+    fg = colors.orange_dark,
+  })
+
+  hl("DiffAdd", {
+    bg = util.blend(colors.green, colors.bg, 0.15),
+  })
+
+  hl("DiffDelete", {
+    bg = util.blend(colors.red_dark, colors.bg, 0.15),
+  })
+
+  hl("DiffChange", {
+    bg = util.blend(colors.orange_dark, colors.bg, 0.12),
+  })
+
+  hl("DiffText", {
+    bg = util.blend(colors.yellow_dark, colors.bg, 0.20),
   })
 
   -- Markup / Markdown
   hl('@markup.heading', {
-    fg = colors.yellow,
+    fg = colors.yellow_dark,
     bold = true,
   })
 
@@ -241,6 +297,18 @@ function M.setup(colors, config)
 
   hl('@markup.list.unchecked', {
     fg = colors.comment,
+  })
+
+  hl('@markdown.list.label', {
+    fg = colors.orange,
+  })
+
+  hl('@markdown.environment', {
+    fg = colors.aqua,
+  })
+
+  hl('@markdown.environment.name', {
+    fg = colors.yellow,
   })
 end
 
