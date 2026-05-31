@@ -28,6 +28,7 @@ M.defaults = {
     mini_icons = true,
     snacks = true,
     incline = true,
+    mason = true,
   },
 
   styles = {

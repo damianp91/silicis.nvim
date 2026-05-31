@@ -65,16 +65,18 @@ function M.setup(colors)
 
   -- cmd
   hl("MsgArea", {
-    fg = colors.fg,
+    fg = colors.blue_light,
     bg = colors.bg_float,
   })
 
   hl("MoreMsg", {
     fg = colors.blue,
+    bg = colors.bg_float,
   })
 
   hl("ModeMsg", {
     fg = colors.fg_dark,
+    bg = colors.bg_float,
   })
 
   hl("Question", {
@@ -83,10 +85,12 @@ function M.setup(colors)
 
   hl("WarningMsg", {
     fg = colors.yellow_dark,
+    bg = colors.bg_float,
   })
 
   hl("ErrorMsg", {
     fg = colors.red,
+    bg = colors.bg_float,
   })
 end
 

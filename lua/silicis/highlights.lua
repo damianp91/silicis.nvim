@@ -50,16 +50,8 @@ function M.setup()
     require("silicis.integrations.neotree").setup(colors, config)
   end
 
-  if config.integrations.devicon then
-    require("silicis.integrations.devicons").setup(colors)
-  end
-
   if config.integrations.oil then
     require("silicis.integrations.oil").setup(colors)
-  end
-
-  if config.integrations.mini_icons then
-    require("silicis.integrations.mini_icons").setup(colors)
   end
 
   if config.integrations.snacks then
@@ -69,6 +61,13 @@ function M.setup()
   if config.integrations.incline then
     require("silicis.integrations.incline").setup(colors, config)
   end
+
+  if config.integrations.mason then
+    require("silicis.integrations.mason").setup(colors)
+  end
+
+  require("silicis.integrations.devicons").setup(colors)
+  require("silicis.integrations.mini_icons").setup(colors)
 end
 
 return M

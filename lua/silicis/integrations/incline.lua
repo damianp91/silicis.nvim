@@ -9,6 +9,11 @@ function M.setup(colors, _)
     bg = colors.green,
   })
 
+  hl("InclineNormalNC", {
+    fg = colors.fg,
+    bg = colors.bg_float,
+  })
+
 end
 
 return M

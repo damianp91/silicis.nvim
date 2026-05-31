@@ -4,6 +4,7 @@ local util = require('silicis.util')
 local hl = util.hl
 
 function M.setup(colors, config)
+
   -- comments
   hl("Comment", {
     fg = colors.comment,
@@ -125,8 +126,9 @@ function M.setup(colors, config)
     bold = true,
   })
 
-  hl("WarningMsg", {
-    fg = colors.yellow_dark,
+  hl("Warning", {
+    fg = colors.yellow,
+    bold = true,
   })
 
   -- special
