@@ -1,6 +1,6 @@
 local M = {}
 
-M.options = {
+M.defaults = {
   transparent = {
     enabled = false,
 
@@ -9,21 +9,51 @@ M.options = {
     neo_tree = false,
     bufferline = false,
     lualine = false,
+    whichkey = false,
+  },
+
+  terminal_colors = true,
+
+  integrations = {
+    telescope = true,
+    cmp = true,
+    noice = true,
+    neotree = true,
+    gitsigns = true,
+    whichkey = true,
+    bufferline = true,
+    lsp = true,
+    devicon = true,
+    oil = true,
+    mini_icons = true,
+    snacks = true,
+    incline = true,
   },
 
   styles = {
-    comments = { italic = true },
-    keywords = { bold = true },
+    comments = {
+      italic = true,
+    },
+
+    keywords = {
+      bold = true,
+    },
+
     functions = {},
-    variables = {}
+
+    variables = {},
   },
 
-  variant = "earth"
+  variant = "earth",
 }
+
+M.options = {}
 
 function M.setup(opts)
   M.options = vim.tbl_deep_extend(
-    "force", M.options, opts or {}
+    "force",
+    vim.deepcopy(M.defaults),
+    opts or {}
   )
 end
 
