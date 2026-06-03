@@ -55,7 +55,7 @@ function M.setup(colors, config)
 
   -- Variables
   hl('@variable', {
-    fg = colors.fg_dark,
+    fg = colors.blue_light,
   })
 
   hl('@variable.builtin', {
@@ -67,12 +67,13 @@ function M.setup(colors, config)
     fg = colors.blue_light,
   })
 
+  --NOTE: aca estaba linkeado con @parameter
   hl("@variable.parameter", {
-    link = "@parameter",
+    fg = colors.fg_dark,
   })
 
   hl('@parameter', {
-    fg = colors.blue,
+    fg = util.darken(colors.fg_dark, 0.90),
     italic = true,
   })
 
@@ -86,11 +87,11 @@ function M.setup(colors, config)
 
   -- Types / Modules
   hl('@type', {
-    fg = colors.yellow,
+    fg = colors.yellow_dark,
   })
 
   hl('@type.builtin', {
-    fg = colors.yellow,
+    fg = colors.orange_dark,
   })
 
   hl('@attribute', {
@@ -171,7 +172,6 @@ function M.setup(colors, config)
     fg = colors.orange,
   })
 
-  -- NOTE: desde aca se retoma
   -- Comments
   hl('@comment', {
     fg = colors.comment,
@@ -252,7 +252,22 @@ function M.setup(colors, config)
 
   -- Markup / Markdown
   hl('@markup.heading', {
-    fg = colors.yellow_dark,
+    fg = colors.green_neon,
+    bold = true,
+  })
+
+  hl('@markup.heading.1.markdown', {
+    fg = colors.yellow,
+    bold = true,
+  })
+
+  hl('@markup.heading.2.markdown', {
+    fg = colors.aqua_dark,
+    bold = true,
+  })
+
+  hl('@markup.heading.3.markdown', {
+    fg = colors.aqua_dark,
     bold = true,
   })
 
@@ -279,7 +294,7 @@ function M.setup(colors, config)
   })
 
   hl('@markup.quote', {
-    fg = colors.comment,
+    fg = colors.fg_dark,
     italic = true,
   })
 

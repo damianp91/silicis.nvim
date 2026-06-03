@@ -24,11 +24,13 @@ M.defaults = {
     bufferline = true,
     lsp = true,
     devicon = true,
+    lualine = true,
     oil = true,
     mini_icons = true,
     snacks = true,
     incline = true,
     mason = true,
+    todocomment = true,
   },
 
   styles = {

@@ -66,6 +66,10 @@ function M.setup()
     require("silicis.integrations.mason").setup(colors)
   end
 
+  if config.integrations.todocomment then
+    require("silicis.integrations.todocomment").setup(colors)
+  end
+
   require("silicis.integrations.devicons").setup(colors)
   require("silicis.integrations.mini_icons").setup(colors)
 end

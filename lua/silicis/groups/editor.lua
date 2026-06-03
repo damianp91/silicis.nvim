@@ -56,8 +56,8 @@ function M.setup(colors, config)
   })
 
   hl("Conceal", {
-    fg = colors.comment,
-    bg = util.get_bg(colors.bg, transparent)
+    fg = colors.fg_dark,
+    italic = true,
   })
 
   ------------------
@@ -158,7 +158,7 @@ function M.setup(colors, config)
   })
 
   hl("Statement", {
-    fg = colors.aqua_dark,
+    fg = colors.aqua,
   })
 
   hl("Label", {

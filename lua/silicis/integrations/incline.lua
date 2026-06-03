@@ -6,7 +6,8 @@ function M.setup(colors, _)
 
   hl("InclineNormal", {
     fg = colors.bg,
-    bg = colors.green,
+    bg = util.blend(colors.green, colors.bg_float, 0.90),
+    bold = true,
   })
 
   hl("InclineNormalNC", {

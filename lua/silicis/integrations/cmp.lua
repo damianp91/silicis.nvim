@@ -12,7 +12,7 @@ function M.setup(colors, _)
 
   hl("CmpDocumentation", {
     fg = colors.fg,
-    bg = colors.bg,
+    bg = colors.bg_float,
   })
 
   hl("CmpDocumentationBorder", {
@@ -31,7 +31,7 @@ function M.setup(colors, _)
   })
 
   hl("CmpItemAbbrMatch", {
-    fg = colors.yellow,
+    fg = colors.orange,
     bold = true,
   })
 
@@ -91,6 +91,119 @@ function M.setup(colors, _)
 
   hl("CmpItemKindText", {
     fg = colors.comment,
+  })
+
+  hl("CmpItemKindEnum", {
+    fg = colors.purple,
+  })
+
+  hl("CmpItemKindEnumMember", {
+    fg = colors.orange,
+  })
+
+  hl("CmpItemKindStruct", {
+    fg = colors.yellow,
+  })
+
+  hl("CmpItemKindConstant", {
+    fg = colors.orange,
+  })
+
+  hl("CmpItemKindConstructor", {
+    fg = colors.yellow,
+  })
+
+  hl("CmpItemKindTypeParameter", {
+    fg = colors.aqua,
+  })
+
+  hl("CmpItemKindOperator", {
+    fg = colors.red,
+  })
+
+  hl("CmpItemKindFolder", {
+    fg = colors.blue,
+  })
+
+  hl("CmpItemKindFile", {
+    fg = colors.fg,
+  })
+
+  -- icons
+  hl("CmpItemKindKeywordIcon", {
+    link = "CmpItemKindKeyword",
+  })
+
+  hl("CmpItemKindFunctionIcon", {
+    link = "CmpItemKindFunction",
+  })
+
+  hl("CmpItemKindMethodIcon", {
+    link = "CmpItemKindMethod",
+  })
+
+  hl("CmpItemKindVariableIcon", {
+    link = "CmpItemKindVariable",
+  })
+
+  hl("CmpItemKindFieldIcon", {
+    link = "CmpItemKindField",
+  })
+
+  hl("CmpItemKindPropertyIcon", {
+    link = "CmpItemKindProperty",
+  })
+
+  hl("CmpItemKindClassIcon", {
+    link = "CmpItemKindClass",
+  })
+
+  hl("CmpItemKindInterfaceIcon", {
+    link = "CmpItemKindInterface",
+  })
+
+  hl("CmpItemKindModuleIcon", {
+    link = "CmpItemKindModule",
+  })
+
+  hl("CmpItemKindSnippetIcon", {
+    link = "CmpItemKindSnippet",
+  })
+
+  hl("CmpItemKindEnumIcon", {
+    link = "CmpItemKindEnum",
+  })
+
+  hl("CmpItemKindEnumMemberIcon", {
+    link = "CmpItemKindEnumMember",
+  })
+
+  hl("CmpItemKindStructIcon", {
+    link = "CmpItemKindStruct",
+  })
+
+  hl("CmpItemKindConstantIcon", {
+    link = "CmpItemKindConstant",
+  })
+
+  hl("CmpItemKindConstructorIcon", {
+    link = "CmpItemKindConstructor",
+  })
+
+  hl("CmpItemKindTypeParameterIcon", {
+    link = "CmpItemKindTypeParameter",
+  })
+
+  hl("CmpItemKindOperatorIcon", {
+    link = "CmpItemKindOperator",
+  })
+
+  hl("CmpItemKindFolderIcon", {
+    link = "CmpItemKindFolder",
+  })
+
+  hl("CmpItemKindFileIcon", {
+    link = "CmpItemKindFile",
   })
 end
 

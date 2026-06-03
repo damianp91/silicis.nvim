@@ -3,14 +3,14 @@ local M = {}
 local util = require("silicis.util")
 
 function M.setup(colors)
-  local section_bg = util.darken(colors.bg_alt, 0.08)
-  local inactive_bg = util.darken(colors.bg_dark, 0.10)
+  local section_bg = util.darken(colors.bg_float, 0.08)
+  local inactive_bg = util.darken(colors.bg, 0.10)
 
   return {
     normal = {
       a = {
         fg = colors.bg,
-        bg = util.darken(colors.bg_alt, 0.25),
+        bg = colors.yellow,
         bold = true,
       },
 
@@ -21,7 +21,7 @@ function M.setup(colors)
 
       c = {
         fg = colors.fg_dark,
-        bg = colors.bg,
+        bg = colors.red,
       },
     },
 

@@ -4,7 +4,6 @@ local util = require("silicis.util")
 local hl = util.hl
 
 function M.setup()
-
   -- Types
   hl("@lsp.type.type", {
     link = "@type",
@@ -103,6 +102,38 @@ function M.setup()
 
   hl("@lsp.mod.defaultLibrary", {
     italic = true,
+  })
+
+  hl("@lsp.type.modifier", {
+    link = "@keyword",
+  })
+
+  hl("@lsp.type.modifier.java", {
+    link = "@keyword",
+  })
+
+  hl("@lsp.typemod.parameter.declaration", {
+    link = "@parameter",
+  })
+
+  hl("@lsp.typemod.parameter.declaration.java", {
+    link = "@parameter",
+  })
+
+  hl("@lsp.typemod.variable.declaration", {
+    link = "@variable",
+  })
+
+  hl("@lsp.typemod.property.declaration", {
+    link = "@property",
+  })
+
+  hl("@lsp.typemod.method.declaration", {
+    link = "@method",
+  })
+
+  hl("@lsp.typemod.class.declaration", {
+    link = "@type",
   })
 end
 

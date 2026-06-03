@@ -31,8 +31,8 @@ function M.setup(colors, config)
   })
 
   hl("TelescopePromptTitle", {
-    fg = colors.bg_dark,
-    bg = colors.orange,
+    fg = colors.red_dark,
+    bg = colors.bg_float,
     bold = true,
   })
 
@@ -72,7 +72,7 @@ function M.setup(colors, config)
 
   -- Selection
   hl("TelescopeSelection", {
-    bg = colors.selection,
+    bg = colors.cursorline,
     bold = true,
   })
 

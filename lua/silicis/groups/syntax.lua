@@ -82,7 +82,7 @@ function M.setup(colors, config)
 
   -- constants
   hl("Constant", {
-    fg = colors.blue_dark,
+    fg = colors.blue,
   })
 
   hl("Boolean", {
@@ -105,6 +105,11 @@ function M.setup(colors, config)
 
   hl("Include", {
     fg = colors.red,
+  })
+
+  hl("IncSearch", {
+    fg = colors.bg,
+    bg = colors.orange,
   })
 
   hl("Define", {

@@ -3,7 +3,6 @@ local util = require('silicis.util')
 local hl = util.hl
 
 function M.setup(colors, _)
-
   local add_bg = util.blend(colors.green, colors.bg, 0.10)
   local change_bg = util.blend(colors.orange, colors.bg, 0.10)
   local delete_bg = util.blend(colors.red, colors.bg, 0.10)
@@ -49,6 +48,37 @@ function M.setup(colors, _)
 
   hl("diffChanged", {
     fg = colors.orange_dark,
+  })
+
+  hl("GitSignCurrentLineBlame", {
+    fg = colors.fg_dark,
+    italic = true,
+  })
+
+  -- Preview
+  hl("GitSignsAddPreview", {
+    fg = colors.green,
+  })
+
+  hl("GitSignsDeletePreview", {
+    fg = colors.red_dark,
+  })
+
+  hl("GitSignsDeleteVirtLn", {
+    fg = colors.red_dark,
+  })
+
+  -- Stages
+  hl("GitSignsStagedAdd", {
+    fg = util.darken(colors.green, 0.5),
+  })
+
+  hl("GitSignsStagedChange", {
+    fg = util.darken(colors.orange, 0.5),
+  })
+
+  hl("GitSignsStagedDelete", {
+    fg = util.darken(colors.red, 0.5),
   })
 end
 

@@ -5,7 +5,7 @@ local hl = util.hl
 function M.setup(colors, _)
   -- Diagnostics
   hl("DiagnosticError", {
-    fg = colors.red,
+    fg = colors.red_dark,
   })
 
   hl("DiagnosticWarn", {
@@ -27,11 +27,31 @@ function M.setup(colors, _)
 
   hl("LspReferenceRead", {
     fg = colors.yellow_dark,
-    italic = true,
   })
 
   hl("LspReferenceWrite", {
     fg = colors.yellow_dark,
+  })
+
+  -- Codelens
+  hl("LspCodeLens", {
+    fg = colors.comment,
+    italic = true,
+  })
+
+  hl("LspCodeLensSeparator", {
+    fg = colors.border,
+  })
+
+  -- Helpers
+  hl("LspSignatureActiveParameter", {
+    fg = colors.orange,
+    bold = true,
+  })
+
+  -- Hint
+  hl("LspInlayHint", {
+    fg = colors.comment,
     italic = true,
   })
 end
