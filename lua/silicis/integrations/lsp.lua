@@ -54,6 +54,11 @@ function M.setup(colors, _)
     fg = colors.comment,
     italic = true,
   })
+
+  -- Types
+  hl("@lsp.type.decorator", {
+    fg = colors.aqua,
+  })
 end
 
 return M

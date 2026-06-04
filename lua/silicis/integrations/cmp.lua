@@ -58,15 +58,15 @@ function M.setup(colors, _)
   })
 
   hl("CmpItemKindVariable", {
-    fg = colors.fg_light,
+    fg = colors.fg_dark,
   })
 
   hl("CmpItemKindField", {
-    fg = colors.cyan,
+    fg = colors.aqua,
   })
 
   hl("CmpItemKindProperty", {
-    fg = colors.cyan,
+    fg = colors.aqua,
   })
 
   hl("CmpItemKindClass", {

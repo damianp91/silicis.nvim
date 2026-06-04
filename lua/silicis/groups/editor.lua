@@ -7,7 +7,7 @@ function M.setup(colors, config)
   local transparent = config.transparent.enabled
 
   ------------------
-  -- secction normal
+  -- section normal
   hl("Normal", {
     fg = colors.fg,
     bg = util.get_bg(colors.bg, transparent),
@@ -80,7 +80,6 @@ function M.setup(colors, config)
     bg = colors.bg_float,
   })
 
-  ------------------
   -- others
   hl("WinSeparator", {
     fg = util.darken(colors.fg_dark, 0.3),
@@ -131,12 +130,12 @@ function M.setup(colors, config)
 
   hl("StatusLine", {
     fg = colors.fg,
-    bg = colors.bg_alt,
+    bg = colors.bg,
   })
 
   hl("StatusLineNC", {
     fg = colors.comment,
-    bg = colors.bg_dark,
+    bg = colors.bg_secondary,
   })
 
   hl("SignColumn", {
@@ -167,6 +166,17 @@ function M.setup(colors, config)
 
   hl("Underlined", {
     fg = colors.blue,
+  })
+
+  hl("Search", {
+    fg = colors.bg,
+    bg = colors.yellow,
+  })
+
+  hl("CurSearch", {
+    fg = colors.bg,
+    bg = colors.orange_dark,
+    bold = true,
   })
 
 end

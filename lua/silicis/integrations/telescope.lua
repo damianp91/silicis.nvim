@@ -3,7 +3,6 @@ local util = require('silicis.util')
 local hl = util.hl
 
 function M.setup(colors, config)
-  -- local preview_bg = util.darken(colors.bg_dark, 0.1)
   local selection_bg = util.blend(colors.blue, colors.bg, 0.18)
   local telescope_transparent = config.transparent.enabled
       and config.transparent.telescope
@@ -48,7 +47,7 @@ function M.setup(colors, config)
   })
 
   hl("TelescopeResultsTitle", {
-    fg = colors.bg_dark,
+    fg = colors.bg,
     bg = util.get_bg(colors.bg_float, telescope_transparent),
     bold = true,
   })
@@ -65,7 +64,7 @@ function M.setup(colors, config)
   })
 
   hl("TelescopePreviewTitle", {
-    fg = colors.bg_dark,
+    fg = colors.bg,
     bg = util.get_bg(colors.bg_float, telescope_transparent),
     bold = true,
   })

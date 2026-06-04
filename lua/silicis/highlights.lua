@@ -70,8 +70,13 @@ function M.setup()
     require("silicis.integrations.todocomment").setup(colors)
   end
 
-  require("silicis.integrations.devicons").setup(colors)
-  require("silicis.integrations.mini_icons").setup(colors)
+  if config.integrations.devicons then
+    require("silicis.integrations.devicons").setup(colors)
+  end
+
+  if config.integrations.mini_icons then
+    require("silicis.integrations.mini_icons").setup(colors)
+  end
 end
 
 return M

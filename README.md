@@ -6,14 +6,22 @@
 
 ## ✨ Features
 
-- Multiple theme variants
-- Modern UI integrations
-- Semantic token support
-- Treesitter support
-- LSP highlights
-- Transparency system
+- 4 theme variants: earth, ash, ember, frost
+- 16 plugin integrations
+- Semantic token support (LSP)
+- Treesitter highlights
+- LSP diagnostics
+- Per-component transparency system
+- Terminal colors
+- Configurable styles (italic, bold)
 - Carefully balanced earthy palettes
 - Inspired by Gruvbox and Solarized Osaka
+
+---
+
+## 📦 Requirements
+
+- Neovim >= 0.11
 
 ---
 
@@ -39,29 +47,66 @@ Using lazy.nvim:
 
 ---
 
-## 🎨 Variants
+## ⚙️ Configuration
 
-| Variant | Style |
-|---|---|
-| earth | Warm earthy tones |
-| ash | Soft slate palette |
-| ember | Dark warm terminal aesthetic |
-| frost | Cool modern interface |
+### Full default config
+
+```lua
+require("silicis").setup({
+  variant = "earth",       -- "earth" | "ash" | "ember" | "frost"
+
+  terminal_colors = true,
+
+  transparent = {
+    enabled = false,
+    floating_windows = false,
+    telescope = false,
+    neo_tree = false,
+    bufferline = false,
+    lualine = false,
+    whichkey = false,
+  },
+
+  styles = {
+    comments = { italic = true },
+    keywords = { bold = true },
+    functions = {},
+    variables = {},
+  },
+
+  integrations = {
+    telescope = true,
+    cmp = true,
+    noice = true,
+    neotree = true,
+    gitsigns = true,
+    whichkey = true,
+    bufferline = true,
+    lsp = true,
+    devicons = true,
+    lualine = true,
+    oil = true,
+    mini_icons = true,
+    snacks = true,
+    incline = true,
+    mason = true,
+    todocomment = true,
+  },
+})
+```
 
 ---
 
-## 🔌 Supported Integrations
+## 🎨 Variants
 
-- Telescope
-- nvim-cmp
-- Neo-tree
-- Noice.nvim
-- Gitsigns
-- Bufferline
-- WhichKey
-- Lualine
-- Treesitter
-- Native LSP
+| Variant | Style | Description |
+|---------|-------|-------------|
+| earth | Warm earthy | Gruvbox-inspired browns, warm greens, amber yellows |
+| ash | Soft slate | Cool grays, muted blues, desaturated greens |
+| ember | Dark warm | Deep brown-black bg, fire-toned accents |
+| frost | Cool modern | Blue-gray base, cyan/purple accents |
+
+<!-- TODO: Add variant screenshots -->
 
 ---
 
@@ -71,13 +116,77 @@ Using lazy.nvim:
 require("silicis").setup({
   transparent = {
     enabled = true,
-
     floating_windows = false,
     telescope = false,
     neo_tree = true,
   },
 })
 ```
+
+---
+
+## 🔌 Supported Integrations
+
+### UI
+- Bufferline
+- Lualine
+- WhichKey
+- Noice.nvim
+- Incline
+- Neo-tree
+- Oil.nvim
+- Snacks.nvim
+
+### Completion & Pickers
+- nvim-cmp
+- Telescope
+
+### Development
+- Native LSP (diagnostics, semantic tokens)
+- Gitsigns
+- Mason
+- TodoComment
+
+### Icons
+- Devicons
+- Mini.icons
+
+---
+
+## 🎯 Highlight Groups
+
+### Core
+- Editor (`Normal`, `CursorLine`, `LineNr`, `WinSeparator`, etc.)
+- Syntax (`Comment`, `String`, `Function`, `Keyword`, `Type`, etc.)
+- Treesitter (`@keyword`, `@function`, `@variable`, `@string`, etc.)
+- Treesitter extended (`@keyword.return`, `@keyword.import`, `@type.qualifier`, `@markup.link.label`, etc.)
+- Semantic tokens (`@lsp.type.*`, `@lsp.mod.*`)
+- Diagnostics (`DiagnosticError`, `DiagnosticWarn`, etc.)
+- UI (`Pmenu`, `Tabline`, `Folded`, `Search`, `CurSearch`, `WinBar`, etc.)
+- Terminal (colors 0-15)
+
+### Search
+- `Search` / `CurSearch` — highlighted search matches and current match
+
+---
+
+<!--
+
+## Screenshots
+
+### Earth
+![Earth variant](path/to/earth.png)
+
+### Ash
+![Ash variant](path/to/ash.png)
+
+### Ember
+![Ember variant](path/to/ember.png)
+
+### Frost
+![Frost variant](path/to/frost.png)
+
+-->
 
 ---
 

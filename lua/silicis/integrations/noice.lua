@@ -64,7 +64,7 @@ function M.setup(colors, _)
   })
 
   hl("NoiceCmdlinePrompt", {
-    fg = colors.cyan,
+    fg = colors.aqua,
     bold = true,
   })
 
@@ -154,7 +154,7 @@ function M.setup(colors, _)
   })
 
   hl("NoiceCompletionItemKindVariable", {
-    fg = colors.fg_light,
+    fg = colors.fg_dark,
   })
 
   hl("NoiceCompletionItemKindKeyword", {

@@ -3,10 +3,10 @@ local util = require("silicis.util")
 local hl = util.hl
 
 function M.setup(colors)
-  print("esta cargado mason")
+
   hl("MasonHighlight", {
     fg = colors.aqua,
-    bg = colors.bg,
+    bg = colors.bg_float,
   })
 
   hl("MasonBackdrop", {
@@ -37,11 +37,6 @@ function M.setup(colors)
   hl("MasonHighlightBlock", {
     fg = colors.bg,
     bg = colors.aqua,
-  })
-
-  hl("MasonHighlight", {
-    fg = colors.aqua,
-    bg = colors.bg_float,
   })
 
   hl("MasonHeaderSecondary", {

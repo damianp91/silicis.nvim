@@ -20,10 +20,6 @@ function M.setup(colors)
   })
 
   hl("PmenuThumb", {
-    bg = colors.fg,
-  })
-
-  hl("PmenuThumb", {
     bg = colors.border,
   })
 

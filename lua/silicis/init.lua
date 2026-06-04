@@ -14,7 +14,7 @@ function M.load()
     vim.cmd("syntax reset")
   end
 
-  -- registrer colorscheme name
+  -- register colorscheme name
   vim.g.colors_name = "silicis"
   vim.o.termguicolors = true
 

@@ -80,7 +80,7 @@ function M.setup(colors, config)
   })
 
   hl("NeoTreeGitUntracked", {
-    fg = colors.cyan,
+    fg = colors.aqua,
   })
 
   hl("NeoTreeGitIgnored", {

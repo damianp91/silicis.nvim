@@ -135,12 +135,11 @@ function M.setup(colors, config)
   })
 
   hl("SnacksPickerGitStatusDeleted", {
-    fg = colors.red,
     link = 'GitSignsDelete',
   })
 
   hl("SnacksPickerGitStatusIgnored", {
-    link = 'GitSignsIgnore'
+    link = 'GitSignsDeleteLn',
   })
 
   hl("SnacksPickerGitStatusUntracked", {

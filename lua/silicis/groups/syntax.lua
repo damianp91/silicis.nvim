@@ -4,7 +4,6 @@ local util = require('silicis.util')
 local hl = util.hl
 
 function M.setup(colors, config)
-
   -- comments
   hl("Comment", {
     fg = colors.comment,
@@ -98,7 +97,7 @@ function M.setup(colors, config)
     fg = colors.orange,
   })
 
-  -- preprocesor
+  -- preprocessor
   hl("PreProc", {
     fg = colors.red,
   })
@@ -118,6 +117,17 @@ function M.setup(colors, config)
 
   hl("Macro", {
     fg = colors.green,
+  })
+
+  -- winbar
+  hl("WinBar", {
+    fg = colors.fg,
+    bg = colors.bg,
+  })
+
+  hl("WinBarNC", {
+    fg = colors.comment,
+    bg = colors.bg,
   })
 
   -- tag
@@ -147,6 +157,37 @@ function M.setup(colors, config)
 
   hl("Debug", {
     fg = colors.aqua_dark,
+  })
+
+  -- markdown
+  hl("markdownH1", {
+    fg = colors.yellow,
+    bold = true,
+  })
+
+  hl("markdownH2", {
+    fg = colors.orange,
+    bold = true,
+  })
+
+  hl("markdownH3", {
+    fg = colors.aqua,
+    bold = true,
+  })
+
+  hl("markdownH4", {
+    fg = colors.green,
+    bold = true,
+  })
+
+  hl("markdownH5", {
+    fg = colors.blue,
+    bold = true,
+  })
+
+  hl("markdownH6", {
+    fg = colors.purple,
+    bold = true,
   })
 end
 

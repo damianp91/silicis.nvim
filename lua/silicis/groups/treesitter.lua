@@ -15,6 +15,39 @@ function M.setup(colors, config)
     bold = true,
   })
 
+  hl('@keyword.return', {
+    link = '@keyword',
+  })
+
+  hl("@keyword.conditional", {
+    link = "@conditional",
+  })
+
+  hl("@keyword.repeat", {
+    link = "@repeat",
+  })
+
+  hl("@keyword.import", {
+    fg = colors.red,
+    bold = true,
+  })
+
+  hl("@keyword.storage", {
+    fg = colors.orange_dark,
+  })
+
+  hl("@keyword.exception", {
+    link = "@exception",
+  })
+
+  hl("@keyword.directive", {
+    fg = colors.orange_dark,
+  })
+
+  hl("@keyword.coroutine", {
+    fg = colors.purple,
+  })
+
   hl('@conditional', {
     fg = colors.red,
     bold = true,
@@ -55,7 +88,7 @@ function M.setup(colors, config)
 
   -- Variables
   hl('@variable', {
-    fg = colors.blue_light,
+    fg = colors.fg_dark,
   })
 
   hl('@variable.builtin', {
@@ -67,7 +100,6 @@ function M.setup(colors, config)
     fg = colors.blue_light,
   })
 
-  --NOTE: aca estaba linkeado con @parameter
   hl("@variable.parameter", {
     fg = colors.fg_dark,
   })
@@ -92,6 +124,10 @@ function M.setup(colors, config)
 
   hl('@type.builtin', {
     fg = colors.orange_dark,
+  })
+
+  hl("@type.qualifier", {
+    fg = colors.orange,
   })
 
   hl('@attribute', {
@@ -262,21 +298,38 @@ function M.setup(colors, config)
   })
 
   hl('@markup.heading.2.markdown', {
-    fg = colors.aqua_dark,
+    fg = colors.orange,
     bold = true,
   })
 
   hl('@markup.heading.3.markdown', {
-    fg = colors.aqua_dark,
+    fg = colors.aqua,
+    bold = true,
+  })
+
+  hl('@markup.heading.4.markdown', {
+    fg = colors.green,
+    bold = true,
+  })
+
+  hl('@markup.heading.5.markdown', {
+    fg = colors.blue,
+    bold = true,
+  })
+
+  hl('@markup.heading.6.markdown', {
+    fg = colors.purple,
     bold = true,
   })
 
   hl('@markup.strong', {
     bold = true,
+    fg = colors.yellow,
   })
 
   hl('@markup.italic', {
     italic = true,
+    fg = colors.aqua,
   })
 
   hl('@markup.link', {
@@ -285,12 +338,21 @@ function M.setup(colors, config)
   })
 
   hl('@markup.link.url', {
-    fg = colors.cyan,
+    fg = colors.aqua,
     underline = true,
+  })
+
+  hl("@markup.link.label", {
+    fg = colors.blue,
+    bold = true,
   })
 
   hl('@markup.raw', {
     fg = colors.green,
+  })
+
+  hl('@markup.raw.markdown_inline', {
+    fg = colors.green_neon,
   })
 
   hl('@markup.quote', {
