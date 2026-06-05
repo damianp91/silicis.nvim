@@ -142,15 +142,15 @@ function M.setup(colors)
 
   -- Git
   hl("DevIconGitIgnore", {
-    fg = colors.red_dark,
+    fg = colors.orange_dark,
   })
 
   hl("DevIconGitConfig", {
-    fg = colors.red_dark,
+    fg = colors.orange_dark,
   })
 
   hl("DevIconGitCommit", {
-    fg = colors.red_dark,
+    fg = colors.orange_dark,
   })
 
   -- Docker
