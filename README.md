@@ -7,7 +7,7 @@
 ## ✨ Features
 
 - 4 theme variants: earth, ash, ember, frost
-- 16 plugin integrations
+- 18 plugin integrations
 - Semantic token support (LSP)
 - Treesitter highlights
 - LSP diagnostics
@@ -91,6 +91,8 @@ require("silicis").setup({
     incline = true,
     mason = true,
     todocomment = true,
+    wilder = true,
+    nvimtree = true,
   },
 })
 ```
@@ -133,7 +135,6 @@ require("silicis").setup({
 - WhichKey
 - Noice.nvim
 - Incline
-- Neo-tree
 - Oil.nvim
 - Snacks.nvim
 
@@ -146,6 +147,13 @@ require("silicis").setup({
 - Gitsigns
 - Mason
 - TodoComment
+
+### File Tree
+- Neo-tree
+- Nvim-tree
+
+### Misc
+- Wilder
 
 ### Icons
 - Devicons
