@@ -77,6 +77,10 @@ function M.setup()
   if config.integrations.mini_icons then
     require("silicis.integrations.mini_icons").setup(colors)
   end
+
+  if config.integrations.wilder then
+    require("silicis.integrations.wilder").setup(colors)
+  end
 end
 
 return M

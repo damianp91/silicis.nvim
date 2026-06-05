@@ -31,6 +31,7 @@ M.defaults = {
     incline = true,
     mason = true,
     todocomment = true,
+    wilder = true,
   },
 
   styles = {
