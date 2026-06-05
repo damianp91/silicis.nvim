@@ -32,6 +32,7 @@ M.defaults = {
     mason = true,
     todocomment = true,
     wilder = true,
+    nvimtree = true,
   },
 
   styles = {

@@ -81,6 +81,10 @@ function M.setup()
   if config.integrations.wilder then
     require("silicis.integrations.wilder").setup(colors)
   end
+
+  if config.integrations.nvimtree then
+    require("silicis.integrations.nvimtree").setup(colors)
+  end
 end
 
 return M
