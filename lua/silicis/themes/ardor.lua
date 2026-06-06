@@ -1,16 +1,16 @@
 local base = require("silicis.themes.base")
 
 return vim.tbl_deep_extend("force", base, {
-  bg_dark = "#111417",
   bg = "#171c21",
-  bg_alt = "#1f252b",
+  bg_float = "#1f252b",
+  bg_secondary = "#111417",
 
   fg = "#c6d0dc",
-
+  fg_dark = "#b0becf",
   comment = "#66707b",
 
   blue = "#7aa2f7",
-  cyan = "#7dcfff",
+  blue_dark = "#7dcfff",
   purple = "#bb9af7",
 
   selection = "#28344a",
