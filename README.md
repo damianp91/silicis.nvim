@@ -117,7 +117,7 @@ require("silicis").setup({
 ![cineris variant](images/cineris.png)
 
 ### Pruna
-![pruna variant](images/pruna.png.png)
+![pruna variant](images/pruna.png)
 
 ### Algor
 ![algor variant](images/algor.png)
