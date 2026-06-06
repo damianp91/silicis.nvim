@@ -53,7 +53,7 @@ Using lazy.nvim:
 
 ```lua
 require("silicis").setup({
-  variant = "earth",       -- "earth" | "ash" | "ember" | "frost"
+  variant = "terra",       -- "terra" | "cineris" | "pruna" | "ardor"
 
   terminal_colors = true,
 
