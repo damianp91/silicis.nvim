@@ -6,7 +6,7 @@
 
 ## ✨ Features
 
-- 4 theme variants: earth, ash, ember, frost
+- 4 theme variants: algor, cineris, pruna, terra
 - 18 plugin integrations
 - Semantic token support (LSP)
 - Treesitter highlights
@@ -53,7 +53,7 @@ Using lazy.nvim:
 
 ```lua
 require("silicis").setup({
-  variant = "terra",       -- "terra" | "cineris" | "pruna" | "ardor"
+  variant = "terra",       -- "terra" | "cineris" | "pruna" | "algor"
 
   terminal_colors = true,
 
@@ -103,12 +103,24 @@ require("silicis").setup({
 
 | Variant | Style | Description |
 |---------|-------|-------------|
-| earth | Warm earthy | Gruvbox-inspired browns, warm greens, amber yellows |
-| ash | Soft slate | Cool grays, muted blues, desaturated greens |
-| ember | Dark warm | Deep brown-black bg, fire-toned accents |
-| frost | Cool modern | Blue-gray base, cyan/purple accents |
+| terra | Warm earthy | Gruvbox-inspired browns, warm greens, amber yellows |
+| cineris | Soft slate | Cool grays, muted blues, desaturated greens |
+| pruna | Dark warm | Deep brown-black bg, fire-toned accents |
+| algor | Cool modern | Blue-gray base, cyan/purple accents |
 
-<!-- TODO: Add variant screenshots -->
+---
+
+### Terra
+![terra variant](images/terra.png)
+
+### Cineris
+![cineris variant](images/cineris.png)
+
+### Pruna
+![pruna variant](images/pruna.png.png)
+
+### Algor
+![algor variant](images/algor.png)
 
 ---
 
@@ -175,26 +187,6 @@ require("silicis").setup({
 
 ### Search
 - `Search` / `CurSearch` — highlighted search matches and current match
-
----
-
-<!--
-
-## Screenshots
-
-### Earth
-![Earth variant](path/to/earth.png)
-
-### Ash
-![Ash variant](path/to/ash.png)
-
-### Ember
-![Ember variant](path/to/ember.png)
-
-### Frost
-![Frost variant](path/to/frost.png)
-
--->
 
 ---
 
