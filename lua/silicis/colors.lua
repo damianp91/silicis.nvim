@@ -10,7 +10,7 @@ function M.setup()
   )
 
   if not ok then
-    variant = require("silicis.themes.earth")
+    variant = require("silicis.themes.terra")
   end
 
   return vim.tbl_deep_extend(

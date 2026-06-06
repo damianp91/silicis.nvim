@@ -49,7 +49,7 @@ M.defaults = {
     variables = {},
   },
 
-  variant = "earth",
+  variant = "terra",
 }
 
 M.options = {}
